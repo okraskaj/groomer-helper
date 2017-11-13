@@ -46,6 +46,7 @@ CUSTOM_APPS = [
     'animals',
     'owners',
     'visits',
+    'breeds',
 ]
 
 PLUGINS = []
