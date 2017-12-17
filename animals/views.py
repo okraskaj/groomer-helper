@@ -5,25 +5,22 @@ from animals.models import Animal
 
 
 class AnimalListView(ListView):
-    template_name = "breeds-list.html"
+    template_name = "animals/list.html"
     model = Animal
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['now'] = timezone.now()
-        context['bookmark'] = 'animals'
-        context['breeds'] = Animal.objects.all()
+        context['animals'] = Animal.objects.all()
         return context
 
 
 class AnimalDetailsView(DetailView):
-    template_name = "breed-details.html"
+    template_name = "animals/details.html"
     model = Animal
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['bookmark'] = 'animals'
-        context['breeds'] = Animal.objects.all()
+        context['animals'] = Animal.objects.all()
         return context
 
 
