@@ -14,3 +14,9 @@ class Breed(models.Model):
     size = models.TextField(max_length=20, blank=True, choices=SIZE_CHOICES)
     grooming_notes = models.TextField(max_length=50, blank=True, null=False)
     hair_type = models.TextField(max_length=50, blank=True, null=False)
+    # waga
+    # photo
+    # preferowane fryzury -> jedno lub wiecej zdjecie
+
+    def __str__(self):
+        return "".join([self.name, " - ", self.species])

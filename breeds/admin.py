@@ -1,3 +1,6 @@
 from django.contrib import admin
+from breeds.models import Breed
 
-# Register your models here.
+@admin.register(Breed)
+class BreedAdmin(admin.ModelAdmin):
+    pass

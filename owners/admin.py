@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from owners.models import Owner
+
+
+@admin.register(Owner)
+class OwnerAdmin(admin.ModelAdmin):
+    pass

@@ -18,3 +18,6 @@ class Animal(models.Model):
     photo = models.ImageField()
     notes = models.TextField(max_length=200, blank=True, null=True)
     owner = models.ForeignKey(Owner)
+
+    def __str__(self):
+        return "".join([self.name, " - ", self.breed.species, " rasy ", self.breed.name])
