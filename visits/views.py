@@ -1,7 +1,4 @@
-from django.shortcuts import render
-
 # Create your views here.
-from django.utils import timezone
 from django.views.generic import DetailView
 from django.views.generic import ListView
 
@@ -26,5 +23,4 @@ class VisitDetailsView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['bookmark'] = 'visits'
-        context['visit'] = context.
         return context

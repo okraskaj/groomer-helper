@@ -1,4 +1,5 @@
 {% load static %}
+{% load my_templatetags %}
 
 <aside>
     <div id="sidebar" class="nav-collapse ">
@@ -10,14 +11,14 @@
             <h5 class="centered">Szykowny Pupil</h5>
 
             <li class="mt">
-                <a {% if bookmark == 'visits' %} class="active" {% endif %} href="/visits">
+                <a class="{% active 'visit' %}" href="/visits">
                     <i class="fa fa-calendar"></i>
                     <span>Wizyty</span>
                 </a>
             </li>
 
             <li class="sub-menu">
-                <a {% if bookmark == 'owners' %} class="active" {% endif %}  href="javascript:;">
+                <a class="{% active 'owner' %}" href="javascript:;">
                     <i class="fa fa-user"></i>
                     <span>Właściciele</span>
                 </a>
@@ -29,24 +30,24 @@
             </li>
 
             <li class="sub-menu">
-                <a {% if bookmark == 'animals' %} class="active" {% endif %}   href="javascript:;">
+                <a class= "{% active 'animals' %}" href="javascript:;">
                     <i class="fa fa-paw"></i>
                     <span>Psy</span>
                 </a>
                 <ul class="sub">
-                     <li><a href="/owners/">Lista</a></li>
+                     <li><a href="/animals/">Lista</a></li>
                     <li><a href="calendar.html">Calendar</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="todo_list.html">Todo List</a></li>
                 </ul>
             </li>
             <li class="sub-menu">
-                <a {% if bookmark == 'breeds' %} class="active" {% endif %}   href="javascript:;">
+                <a class="{% active 'breed' %}" href="javascript:;">
                     <i class="fa fa-book"></i>
                     <span>Rasy</span>
                 </a>
                 <ul class="sub">
-                    <li><a href="blank.html">Blank Page</a></li>
+                    <li><a href="/breeds/">Lista</a></li>
                     <li><a href="login.html">Login</a></li>
                     <li><a href="lock_screen.html">Lock Screen</a></li>
                 </ul>
