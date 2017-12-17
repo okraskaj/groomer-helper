@@ -5,42 +5,43 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
 
-            <p class="centered"><a href="profile.html"><img src="{% static "/img/logo-kolo.png" %}" class="img-circle"
-                                                            width="120"></a></p>
+            <p class="centered"><a href="/"><img src="{% static "/img/logo-kolo.png" %}" class="img-circle"
+                                                 width="120"></a></p>
             <h5 class="centered">Szykowny Pupil</h5>
 
             <li class="mt">
-                <a class="active" href="index.html">
+                <a {% if bookmark == 'visits' %} class="active" {% endif %} href="/visits">
                     <i class="fa fa-calendar"></i>
                     <span>Wizyty</span>
                 </a>
             </li>
 
             <li class="sub-menu">
-                <a href="javascript:;">
+                <a {% if bookmark == 'owners' %} class="active" {% endif %}  href="javascript:;">
                     <i class="fa fa-user"></i>
-                    <span>Klienci</span>
+                    <span>Właściciele</span>
                 </a>
                 <ul class="sub">
-                    <li><a href="general.html">General</a></li>
-                    <li><a href="buttons.html">Buttons</a></li>
-                    <li><a href="panels.html">Panels</a></li>
+                    <li><a href="/owners/">Lista</a></li>
+                    <li><a href="/owners/new/">Nowy</a></li>
+{#                    <li><a href="panels.html">Panels</a></li>#}
                 </ul>
             </li>
 
             <li class="sub-menu">
-                <a href="javascript:;">
+                <a {% if bookmark == 'animals' %} class="active" {% endif %}   href="javascript:;">
                     <i class="fa fa-paw"></i>
                     <span>Psy</span>
                 </a>
                 <ul class="sub">
+                     <li><a href="/owners/">Lista</a></li>
                     <li><a href="calendar.html">Calendar</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="todo_list.html">Todo List</a></li>
                 </ul>
             </li>
             <li class="sub-menu">
-                <a href="javascript:;">
+                <a {% if bookmark == 'breeds' %} class="active" {% endif %}   href="javascript:;">
                     <i class="fa fa-book"></i>
                     <span>Rasy</span>
                 </a>
