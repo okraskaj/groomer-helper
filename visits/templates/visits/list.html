@@ -10,9 +10,14 @@
                     <hr>
                     <thead>
                     <tr>
-                        <th><i class="fa fa-user"></i> Pies </th>
-                        <th class="hidden-phone"><i class="fa fa-phone"></i> Właściciel </th>
-                        <th><i class="fa fa-envelope"></i> Data </th>
+                        <th><i class="fa fa-pencil"></i> Szczegóły </th>
+                        <th><i class="fa fa-paw"></i> Pies </th>
+                        <th><i class="fa fa-user"></i> Właściciel </th>
+                        <th><i class="fa fa-calendar"></i> Data </th>
+                        <th><i class="fa fa-scissors"></i> Usługa </th>
+                        <th><i class="fa fa-check-square"></i> Odbyta? </th>
+                        <th><i class="fa fa-money"></i> Przyjęta zapłata </th>
+                        <th><i class="fa fa-book"></i> Notatki </th>
                         <th><i class=" fa fa-edit"></i> </th>
                         <th></th>
                     </tr>
@@ -21,8 +26,13 @@
                     {% for visit in visits %}
                         <tr>
                             <td><a href="/visits/{{ visit.id }}"> Szczegóły </a></td>
+                            <td>{{ visit.animal }}</td>
+                            <td>{{ visit.animal.owner }}</td>
                             <td class="hidden-phone">{{ visit.start }}</td>
-                            <td>{{ owner.email }}</td>
+                            <td>{{ visit.service }}</td>
+                            <td>{{ visit.happened }}</td>
+                            <td>{{ visit.money_taken }}</td>
+                            <td>{{ visit.notes }}</td>
                             <td><span class="label label-info label-mini">Due</span></td>
                             <td>
                                 <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
