@@ -25,7 +25,7 @@
                     <tbody>
                     {% for visit in visits %}
                         <tr>
-                            <td><a href="/visits/{{ visit.id }}"> Szczegóły </a></td>
+                            <td><a href="{% url 'visit-details' visit.id %}"> Szczegóły </a></td>
                             <td>{{ visit.animal }}</td>
                             <td>{{ visit.animal.owner }}</td>
                             <td class="hidden-phone">{{ visit.start }}</td>
