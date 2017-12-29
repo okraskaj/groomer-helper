@@ -7,7 +7,7 @@ from breeds.models import Breed
 
 
 class BreedListView(ListView):
-    template_name = "breeds-list.html"
+    template_name = "breeds/list.html"
     model = Breed
 
     def get_context_data(self, **kwargs):
@@ -17,7 +17,7 @@ class BreedListView(ListView):
 
 
 class BreedDetailsView(DetailView):
-    template_name = "breed-details.html"
+    template_name = "breeds/details.html"
     model = Breed
 
     def get_context_data(self, **kwargs):
