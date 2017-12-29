@@ -1,48 +1,32 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'list.html' %}
+
+{% block table-headers %}
+    <th><i class="fa fa-pencil"></i> Rasa</th>
+    <th><i class="fa fa-pencil"></i> Gatunek</th>
+    <th><i class="fa fa-arrow-up"></i> Rozmiar</th>
+    <th><i class="fa fa-sort-numeric-asc"></i> Waga</th>
+    <th><i class="fa fa-crosshairs"></i> Typ włosia</th>
+    <th><i class="fa fa-edit"></i> Notatki</th>
+    <th><i class=" fa fa-edit"></i></th>
+    <th></th>
+{% endblock %}
 
 
-    <div class="row mt">
-        <div class="col-md-12">
-            <div class="content-panel">
-                <table class="table table-striped table-advance table-hover">
-                    <h4><i class="fa fa-angle-right"></i>  Rasy </h4>
-                    <hr>
-                    <thead>
-                    <tr>
-                        <th><i class="fa fa-pencil"></i> Rasa </th>
-                        <th><i class="fa fa-pencil"></i> Gatunek </th>
-                        <th><i class="fa fa-arrow-up"></i> Rozmiar </th>
-                        <th><i class="fa fa-sort-numeric-asc"></i> Waga </th>
-                        <th><i class="fa fa-crosshairs"></i> Typ włosia </th>
-                        <th><i class="fa fa-edit"></i> Notatki </th>
-                        <th><i class=" fa fa-edit"></i> </th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for breed in breeds %}
-                        <tr>
-                            <td><a href="{% url 'breed-details' breed.id %}"> {{ breed.name }} </a></td>
-                            <td>{{ breed.species }}</td>
-                            <td>{{ breed.size }}</td>
-                            <td>{{ breed.weight }}</td>
-                            <td>{{ breed.hair_type }}</td>
-                            <td>{{ breed.grooming_notes }}</td>
-                            <td><span class="label label-info label-mini">Due</span></td>
-                            <td>
-                                <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div><!-- /content-panel -->
-        </div><!-- /col-md-12 -->
-    </div><!-- /row -->
-
-
-
+{% block table-rows %}
+    {% for breed in breeds %}
+        <tr>
+            <td><a href="{% url 'breed-details' breed.id %}"> {{ breed.name }} </a></td>
+            <td>{{ breed.species }}</td>
+            <td>{{ breed.size }}</td>
+            <td>{{ breed.weight }}</td>
+            <td>{{ breed.hair_type }}</td>
+            <td>{{ breed.grooming_notes }}</td>
+            <td><span class="label label-info label-mini">Due</span></td>
+            <td>
+                <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
+                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+            </td>
+        </tr>
+    {% endfor %}
 {% endblock %}
