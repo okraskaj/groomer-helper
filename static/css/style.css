@@ -416,7 +416,7 @@ ul.sidebar-menu li a.active i {
 
 .black-bg {
     background: #8d537a;
-            /*#fcdeea;*/
+    /*#fcdeea;*/
     /*#ffd777;*/
     border-bottom: 1px solid #7d436a;
     /*#c9aa5f;*/
@@ -2324,6 +2324,11 @@ label {
     background: #68dff0;
     color: #fff;
     padding: 10px 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .go-top {
