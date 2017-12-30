@@ -1,5 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-    <h1>{{ title }}</h1>
+    <div class="profile-wrapper">
+        <div id=profile-header" style="display:block; width: 50%; overflow:auto; padding: 10px;" >
+            {% block profile-header %}
+                <img src="{% static "img/ui-danro.jpg" %}" class="img-circle">
+                <h1>Tytuł</h1>
+            {% endblock %}
+        </div>
+        <div id="other-info">
+            {% block details %}
+            {% endblock %}
+        </div>
 
+    </div>
 {% endblock %}

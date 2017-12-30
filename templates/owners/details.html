@@ -1,5 +1,24 @@
-{% extends 'base.html' %}
-{% block content %}
-    <h1>Blaaa</h1>
+{% extends 'details.html' %}
+{% load static %}
+{% block profile-header%}
+{#    <img src="{{ owner.photo.url }}" class="img-circle" style="float: right; height:150px;" alt="profile-photo">#}
+    <h1>{{ owner.full_name }}</h1>
+{% endblock %}
 
+{% block details %}
+    <p><span>Numer telefonu:</span> {{ owner.phone_number }}</p>
+    <p><span>Email:</span> {{ owner.email}}</p>
+    <p><span>Miejsce zamieszkania:</span> {{ owner.location}}</p>
+    <p><span>Posiadane psy:</span>
+        <ul class="list-group">
+        {% for animal in owner.animal_set.all %}
+            <li class="list-group-item">
+                <a href="{% url 'animal-details' animal.id %}">{{animal}}</a>
+            </li>
+        {% empty %}
+             Brak
+        {% endfor %}
+        </ul>
+    </p>
+{#    <p><span>Notatki:</span>{{ owner.notes }}</p>#}
 {% endblock %}

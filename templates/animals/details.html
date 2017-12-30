@@ -1,5 +1,18 @@
-{% extends 'base.html' %}
-{% block content %}
-    <h1>Blaaa</h1>
+{% extends 'details.html' %}
+{% load static %}
+{% block profile-header%}
+    <img src="{{ animal.photo.url }}" class="img-circle" style="float: right; height:150px;" alt="profile-photo">
+    <h1>{{ animal.name }}</h1>
+    <h3><a href="{% url 'breed-details' animal.breed.id %}">{{ animal.breed }}</a></h3>
+{% endblock %}
 
+{% block details %}
+    <p><span>Kolor:</span> {{ animal.color }}</p>
+    <p><span>Płeć:</span> {{ animal.gender }}</p>
+    <p><span>Notatki:</span>{{ animal.notes }}</p>
+    <p><span>Właściciel:</span>
+        <a href="{% url 'owner-details' animal.owner.id %}">{{ animal.owner }}</a>
+    </p>
+    <p>Ostatnia Wizyta ------------------------------------=============================</p>
+    <p>Najbliższa Wizyta ------------------------------------=============================</p>
 {% endblock %}

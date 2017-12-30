@@ -1,5 +1,26 @@
-{% extends 'base.html' %}
-{% block content %}
-    <h1>Blaaa</h1>
+{% extends 'details.html' %}
+{% load static %}
+{% block profile-header%}
+{#    <img src="{{ breed.photo.url }}" class="img-circle" style="float: right; height:150px;" alt="profile-photo">#}
+    <h1>{{ breed.name }}</h1>
+    <h3>{{ breed.species }}</h3>
+{% endblock %}
 
+{% block details %}
+    <p><span>Rozmiar:</span> {{ breed.size}}</p>
+    <p><span>Typ włosia:</span> {{ breed.hair_type}}</p>
+    <p><span>Notatki:</span>{{ breed.grooming_notes }}</p>
+{#    <p><span>Właściciel:</span>#}
+{#        <a href="{% url 'owner-details' breed.owner.id %}">{{ breed.owner }}</a>#}
+{#    </p>#}
+    <p>Psy tej rasy:
+        {% for animal in breed.animal_set.all %}
+            <li class="list-group-item">
+                <a href="{% url 'animal-details' animal.id %}">{{animal}}</a>
+            </li>
+        {% empty %}
+             Brak
+        {% endfor %}
+    </p>
+    <p>Lista filmików instruktarzowych ---------------------=========================</p>
 {% endblock %}
