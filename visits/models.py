@@ -6,7 +6,7 @@ from animals.models import Animal
 class Visit(models.Model):
     start = models.DateTimeField(null=False)
     stop = models.DateTimeField(null=False)
-    animal = models.ForeignKey(Animal)
+    animal = models.ForeignKey(Animal, on_delete=models.CASCADE, )
     service = models.TextField(max_length=100, blank=False, null=False, unique=True)
     # TODO: choice albo nawet odddzielna tabela z danymi jak np cennik itd
     happened = models.BooleanField(null=False, default=False)
