@@ -1,5 +1,55 @@
-{% extends 'base.html' %}
-{% block content %}
-    <h1>Blaaa</h1>
+{% extends 'details.html' %}
+{% load l10n %}
 
+{% block profile-header%}
+      <div class="col-md-1" style="display: block; float: left">
+        <br>
+        <p class="my_calendar">
+            {{ visit.start|date:'d' }}<em>{{ visit.start|date:'E'|localize }}</em>
+        </p>
+    </div>
+    <h1 style="margin-left: 150px; color:black ">{{ visit.animal }} </h1>
+    <h2 style="margin-left: 150px;: "><span class="label label-info bg-theme02">{{ visit.start|date:'h:i' }} </span></h2>
+{% endblock %}
+
+{% block details %}
+    <table class="table table-bordered">
+        <tr>
+            <td><strong>Pies: </strong></td>
+            <td> <a href="{% url 'animal-details' visit.animal.id  %}"> {{ visit.animal}}</a></td>
+        </tr>
+        <tr>
+            <td><strong>Właściciel: </strong></td>
+            <td> <a href="{% url 'owner-details' visit.animal.owner.id %}"> {{ visit.animal.owner }}</a></td>
+        </tr>
+        <tr>
+            <td><strong> Usługa: </strong></td>
+            <td>{{ visit.service}}</td>
+        </tr>
+        <tr>
+            <td><strong> Od: </strong></td>
+            <td>{{ visit.start|date:'H:i'}}</td>
+        </tr>
+        <tr>
+            <td><strong> Do: </strong></td>
+            <td>{{ visit.stop|date:'H:i'}}</td>
+        </tr>
+        <tr>
+            <td><strong> Czy odbyta: </strong></td>
+            <td>{{  visit.happened|yesno:"Tak,Nie" }}
+                    {# TODO: Buttony naprawde zaznaczające czy wizyta sie odbyła   #}
+                    {% if visit.happened %} <button class="btn btn-theme05 btn-xs"><i class="fa fa-times "></i></button>
+                    {% else %}<button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
+                    {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td><strong> Przyjęta zapłata: </strong></td>
+            <td>{{ visit.money_taken }} zł</td>
+        </tr>
+        <tr>
+            <td><strong> Notatki: </strong></td>
+            <td>{{ visit.notes}}</td>
+        </tr>
+    </table>
 {% endblock %}

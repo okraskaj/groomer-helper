@@ -77,7 +77,8 @@ a, a:hover, a:focus {
 }
 
 .bg-theme02 {
-    background-color: #ac92ec;
+    color: #fff;
+    background-color: #8d537a;
 }
 
 .bg-theme03 {
@@ -108,8 +109,8 @@ a, a:hover, a:focus {
 
 .btn-theme02 {
     color: #fff;
-    background-color: #ac92ec;
-    border-color: #967adc;
+    background-color: #8d537a;
+    border-color: #7d436a;
 }
 
 .btn-theme02:hover,
@@ -118,8 +119,8 @@ a, a:hover, a:focus {
 .btn-theme02.active,
 .open .dropdown-toggle.btn-theme02 {
     color: #fff;
-    background-color: #967adc;
-    border-color: #967adc;
+    background-color: #ad739a;
+    border-color: #8d537a;
 }
 
 .btn-theme03 {
@@ -2350,3 +2351,88 @@ label {
 }
 
 
+/*
+my_calendar css
+*/
+
+.my_calendar {
+margin:.25em 10px 10px 0;
+padding-top:5px;
+float:left;
+width:100px;
+height:120px;
+background:#ededef;
+font:bold 44px/80px Arial Black,Arial,Helvetica,sans-serif;
+text-align:center;
+color:#000;
+text-shadow:#fff 0 1px 0;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+border-radius:3px;
+position:relative;
+-moz-box-shadow:0 2px 2px #888;
+-webkit-box-shadow:0 2px 2px #888;
+box-shadow:0 2px 2px #888
+}
+
+.my_calendar em {
+display:block;
+font:normal bold 16px/36px Arial,Helvetica,sans-serif;
+color:#fff;
+text-shadow:#8a5175 0 -1px 0;
+background: #8d537a ;
+-moz-border-radius-bottomright:3px;
+-webkit-border-bottom-right-radius:3px;
+border-bottom-right-radius:3px;
+-moz-border-radius-bottomleft:3px;
+-webkit-border-bottom-left-radius:3px;
+border-bottom-left-radius:3px;
+border-top:1px solid #00365a
+}
+
+.my_calendar:before,.my_calendar:after {
+content:'';
+float:left;
+position:absolute;
+top:5px;
+width:8px;
+height:8px;
+background:#111;
+z-index:1;
+-moz-border-radius:10px;
+-webkit-border-radius:10px;
+border-radius:10px;
+-moz-box-shadow:0 1px 1px #fff;
+-webkit-box-shadow:0 1px 1px #fff;
+box-shadow:0 1px 1px #fff
+}
+
+.my_calendar:before {
+left:11px
+}
+
+.my_calendar:after {
+right:11px
+}
+
+.my_calendar em:before,.my_calendar em:after {
+content:'';
+float:left;
+position:absolute;
+top:-5px;
+width:4px;
+height:14px;
+background:#dadada;
+z-index:2;
+-moz-border-radius:2px;
+-webkit-border-radius:2px;
+border-radius:2px
+}
+
+.my_calendar em:before {
+left:13px
+}
+
+.my_calendar em:after {
+right:13px
+}

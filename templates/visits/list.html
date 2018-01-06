@@ -1,4 +1,5 @@
 {% extends 'list.html' %}
+{% load my_templatetags %}
 
 {% block table-headers %}
     <th><i class="fa fa-pencil"></i> Szczegóły</th>
@@ -21,10 +22,14 @@
             <td>{{ visit.animal.owner }}</td>
             <td class="hidden-phone">{{ visit.start }}</td>
             <td>{{ visit.service }}</td>
-            <td>{{ visit.happened }}</td>
-            <td>{{ visit.money_taken }}</td>
+            <td>{{ visit.happened|yesno:"Tak,Nie" }}
+                {# TODO: Buttony naprawde zaznaczające czy wizyta sie odbyła   #}
+                {% if visit.happened %} <button class="btn btn-theme02 btn-xs"><i class="fa fa-times "></i></button>
+                {% else %}<button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
+                {% endif %}</td>
+            <td>{{ visit.money_taken }} zł</td>
             <td>{{ visit.notes }}</td>
-            <td><span class="label label-info label-mini">Due</span></td>
+
             <td>
                 <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
                 <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
