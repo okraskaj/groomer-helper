@@ -1,7 +1,11 @@
 {% extends 'details.html' %}
 {% load static %}
 {% block profile-header%}
+    {% if animal.photo %}
     <img src="{{ animal.photo.url }}" class="img-circle" style="float: right; height:150px;" alt="profile-photo">
+    {% else %}
+    <img src="{% static 'img/dog.png' %}" class="img-circle" style="float: right; height:150px;" alt="profile-photo">
+    {% endif %}
     <h1>{{ animal.name }}</h1>
     <h3><a href="{% url 'breed-details' animal.breed.id %}">{{ animal.breed }}</a></h3>
 {% endblock %}

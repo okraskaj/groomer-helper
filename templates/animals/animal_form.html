@@ -1,1 +1,8 @@
 {% extends 'base.html' %}
+{% block content %}
+    <form name="create_animal_form" action="" method="post" onsubmit="validate_form()" >
+        {% csrf_token %}
+        {{ form.as_p}}
+        <input class="btn btn-primary btn-theme02 btn-md" id="submit" type="submit" value="Zapisz zwierzę" />
+    </form>
+{% endblock %}

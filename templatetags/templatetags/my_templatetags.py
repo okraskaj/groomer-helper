@@ -16,3 +16,12 @@ def active(context, pattern_or_urlname):
     if re.search(pattern, path):
         return 'active'
     return ''
+
+
+@register.simple_tag(takes_context=True)
+def polish_bools(context, bool):
+    if bool is True:
+        return 'Tak'
+    else:
+        return 'Nie'
+    return ''
