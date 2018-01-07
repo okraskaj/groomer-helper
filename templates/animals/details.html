@@ -17,6 +17,7 @@
     <p><span>Właściciel:</span>
         <a href="{% url 'owner-details' animal.owner.id %}">{{ animal.owner }}</a>
     </p>
-    <p>Ostatnia Wizyta ------------------------------------=============================</p>
-    <p>Najbliższa Wizyta ------------------------------------=============================</p>
+    <p>
+        Ostatnia Wizyta:  {{ animal.get_last_visit }}</p>
+    <p>Najbliższa Wizyta: {{ animal.get_next_visit  }}</p>
 {% endblock %}

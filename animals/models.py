@@ -1,4 +1,7 @@
+from datetime import datetime
+
 from django.db import models
+from django.db.models import Max
 from django.urls import reverse
 
 from breeds.models import Breed
@@ -24,6 +27,12 @@ class Animal(models.Model):
 
     def gender_verbose(self):
         return dict(Animal.GENDER_CHOICES)[self.gender]
+
+    def get_last_visit(self):
+        return self.visit_set.filter(start__lt=datetime.now()).latest('start').start
+
+    def get_next_visit(self):
+        return self.visit_set.filter(start__gt=datetime.now()).earliest('start').start
 
     def get_absolute_url(self):
         return reverse('animal-detail', kwargs={'pk': self.pk})
