@@ -40,9 +40,7 @@ class AnimalView(TemplateView):
 
 class AnimalCreate(generic.CreateView):
     form_class = forms.AnimalForm
-    template_name = 'animals/animal_form.html'
-    # form_class = AnimalForm
-    # model = Animal
+    template_name = 'form.html'
 
     def post(self, request, *args, **kwargs):
         if "cancel" in request.POST:

@@ -1,7 +1,6 @@
 from datetime import datetime
 
 from django.db import models
-from django.db.models import Max
 from django.urls import reverse
 
 from breeds.models import Breed
@@ -18,7 +17,7 @@ class Animal(models.Model):
     gender = models.BooleanField(choices=GENDER_CHOICES)
     breed = models.ForeignKey(Breed, on_delete=models.CASCADE)
     color = models.TextField(max_length=100, blank=True, null=True)
-    photo = models.ImageField()
+    photo = models.ImageField(upload_to='animal-avatars/', default='animal-avatars/None/no-img.png')
     notes = models.TextField(max_length=200, blank=True, null=True)
     owner = models.ForeignKey(
         Owner,

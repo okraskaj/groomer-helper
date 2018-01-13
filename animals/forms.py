@@ -1,5 +1,4 @@
 from django import forms
-from django.forms import ImageField
 
 from animals.models import Animal
 
@@ -16,10 +15,10 @@ class AnimalForm(forms.ModelForm):
     name = forms.CharField(max_length=100)
     color = forms.CharField(max_length=100)
     notes = forms.CharField(widget=forms.Textarea(attrs={'rows': 4, 'cols': 50}))
-    # photo = ImageField(required=False)
+    photo = forms.ImageField(required=False)
 
     class Meta:
         model = Animal
-        fields = ('name', 'gender', 'breed', 'owner', 'color', 'notes')
+        fields = ('name', 'gender', 'breed', 'owner', 'color', 'notes', 'photo')
 
 
