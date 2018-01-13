@@ -5,6 +5,5 @@ from . import views
 urlpatterns = [
     path('', views.BreedListView.as_view(), name='breeds-list'),
     path('<int:pk>/', views.BreedDetailsView.as_view(), name='breed-details'),
-    # path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
-    # path('<int:question_id>/vote/', views.vote, name='vote'),
+    path('new/', views.BreedCreate.as_view(), name='breed-new'),
 ]

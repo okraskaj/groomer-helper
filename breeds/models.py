@@ -8,6 +8,20 @@ class Breed(models.Model):
         ('large', 'Large'),
         ('giant', 'Giant'),
     ]
+    SPECIES_CHOICES = [
+        ('pies', 'Pies'),
+        ('kot', 'Kot'),
+        ('świnka morska', 'Świnka morska'),
+        ('królik', 'Królik'),
+    ]
+
+    HAIR_TYPE_CHOICES = [
+        ('normalna', 'Normalna'),
+        ('szorstka', 'Szorstka'),
+        ('miękka', 'Miękka'),
+        ('duża ilość podszerstka', 'Duża ilość podszerstka'),
+        ('twarda', 'Twarda')
+    ]
 
     name = models.TextField(max_length=100, blank=False, null=False, unique=True)
     species = models.TextField(max_length=50, blank=False, default='dog')
@@ -15,7 +29,8 @@ class Breed(models.Model):
     grooming_notes = models.TextField(max_length=50, blank=True, null=False)
     hair_type = models.TextField(max_length=50, blank=True, null=False)
     weight = models.IntegerField(default=20, blank=False, null=False)
-    photo = models.ImageField(null=True)
+    photo = models.ImageField(upload_to='breed-avatars/', default='breed-avatars/None/no-img.png')
+
     # TODO: preferowane fryzury -> jedno lub wiecej zdjecie
 
     def __str__(self):
