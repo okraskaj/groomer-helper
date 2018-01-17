@@ -1,6 +1,8 @@
 from django.db import models
 
 from animals.models import Animal
+from config.settings import DEFAULT_SALON_ID
+from salons.models import Salon
 
 
 class Visit(models.Model):
@@ -12,6 +14,8 @@ class Visit(models.Model):
     happened = models.BooleanField(null=False, default=False)
     money_taken = models.PositiveIntegerField(null=True)
     notes = models.TextField(max_length=100, blank=True, null=False)
+    salon = models.ForeignKey(Salon, default=DEFAULT_SALON_ID, null=False, on_delete=models.CASCADE)
+
 
     def __str__(self):
         return "".join([self.animal.name, " o ", str(self.start.hour)])

@@ -50,6 +50,7 @@ BASE_APPS = [
 
 CUSTOM_APPS = [
     'templatetags',
+    'salons',
     'animals',
     'owners',
     'visits',
@@ -138,4 +139,5 @@ STATICFILES_DIRS = [
     'static/',
 ]
 MEDIA_URL = '/media/'
-MEDIA_ROOT = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+DEFAULT_SALON_ID = 1

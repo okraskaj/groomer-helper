@@ -1,5 +1,8 @@
 from django.db import models
 
+from config.settings import DEFAULT_SALON_ID
+from salons.models import Salon
+
 
 class Breed(models.Model):
     SIZE_CHOICES = [
@@ -30,6 +33,8 @@ class Breed(models.Model):
     hair_type = models.TextField(max_length=50, blank=True, null=False)
     weight = models.IntegerField(default=20, blank=False, null=False)
     photo = models.ImageField(upload_to='breed-avatars/', default='breed-avatars/None/no-img.png')
+    salon = models.ForeignKey(Salon, default=DEFAULT_SALON_ID, null=False, on_delete=models.CASCADE)
+
 
     # TODO: preferowane fryzury -> jedno lub wiecej zdjecie
 

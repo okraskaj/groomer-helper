@@ -4,7 +4,9 @@ from django.db import models
 from django.urls import reverse
 
 from breeds.models import Breed
+from config.settings import DEFAULT_SALON_ID
 from owners.models import Owner
+from salons.models import Salon
 
 
 class Animal(models.Model):
@@ -23,6 +25,8 @@ class Animal(models.Model):
         Owner,
         on_delete=models.CASCADE,
     )
+    salon = models.ForeignKey(Salon, default=DEFAULT_SALON_ID, null=False, on_delete=models.CASCADE)
+
 
     def gender_verbose(self):
         return dict(Animal.GENDER_CHOICES)[self.gender]
