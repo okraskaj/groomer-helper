@@ -1,4 +1,4 @@
-# groomer-helper
+# Groomer-helper
 
 Management software prototype for pet grooming salon. Made as my BSc Thesis.
 
