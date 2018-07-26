@@ -6,10 +6,10 @@ from salons.models import Salon
 
 class Breed(models.Model):
     SIZE_CHOICES = [
-        ('miniature', 'Miniature'),
-        ('medium', 'Medium'),
-        ('large', 'Large'),
-        ('giant', 'Giant'),
+        ('miniatura', 'Miniatura'),
+        ('średni', 'Średni'),
+        ('duży', 'Duży'),
+        ('olbrzym', 'Olbrzym'),
     ]
     SPECIES_CHOICES = [
         ('pies', 'Pies'),

@@ -7,26 +7,28 @@ from breeds.models import Breed
 from config.settings import DEFAULT_SALON_ID
 from owners.models import Owner
 from salons.models import Salon
+from django.utils.translation import ugettext_lazy as _
 
 
 class Animal(models.Model):
     GENDER_CHOICES = [
-        (True, 'Male'),
-        (False, 'Female'),
+        (True, _('Male')),
+        (False, _('Female')),
     ]
 
-    name = models.TextField(max_length=100, blank=True, null=True)
-    gender = models.BooleanField(choices=GENDER_CHOICES)
-    breed = models.ForeignKey(Breed, on_delete=models.CASCADE)
-    color = models.TextField(max_length=100, blank=True, null=True)
-    photo = models.ImageField(upload_to='animal-avatars/', default='animal-avatars/None/no-img.png')
-    notes = models.TextField(max_length=200, blank=True, null=True)
+    name = models.TextField(max_length=100, blank=True, null=True, verbose_name=_('name'))
+    gender = models.BooleanField(choices=GENDER_CHOICES, verbose_name=_('gender'))
+    breed = models.ForeignKey(Breed, on_delete=models.CASCADE, verbose_name=_('breed'))
+    color = models.TextField(max_length=100, blank=True, null=True, verbose_name=_('color'))
+    photo = models.ImageField(upload_to='animal-avatars/', default='animal-avatars/None/no-img.png',
+                              verbose_name=_('photo'))
+    notes = models.TextField(max_length=200, blank=True, null=True, verbose_name=_('notes'))
     owner = models.ForeignKey(
         Owner,
+        verbose_name=_('owner'),
         on_delete=models.CASCADE,
     )
     salon = models.ForeignKey(Salon, default=DEFAULT_SALON_ID, null=False, on_delete=models.CASCADE)
-
 
     def gender_verbose(self):
         return dict(Animal.GENDER_CHOICES)[self.gender]

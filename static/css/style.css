@@ -16,6 +16,7 @@ body {
     padding: 0px !important;
     margin: 0px !important;
     font-size: 13px;
+    height: 100%;
 }
 
 ul li {
@@ -72,9 +73,9 @@ a, a:hover, a:focus {
 
 /*Theme Backgrounds*/
 
-.bg-theme {
-    background-color: #68dff0;
-}
+/*.bg-theme {*/
+    /*background-color: #5BAEB2;*/
+/*}*/
 
 .bg-theme02 {
     color: #fff;
@@ -213,7 +214,7 @@ hr {
 }
 
 .bg-theme {
-    background-color: #68dff0;
+    background-color: rgba(232, 146, 202, 0.57);
 }
 
 ul.top-menu > li > .logout {
@@ -224,7 +225,7 @@ ul.top-menu > li > .logout {
     border: 1px solid #64c3c2 !important;
     padding: 5px 15px;
     margin-right: 15px;
-    background: #68dff0;
+    background: #5BAEB2;
     margin-top: 15px;
 }
 
@@ -430,6 +431,7 @@ ul.sidebar-menu li a.active i {
     padding-right: 15px;
     padding-bottom: 15px;
     padding-top: 0px;
+    min-height: 100%;
     width: 100%;
 }
 
@@ -473,7 +475,7 @@ a.logo span {
 }
 
 ul.top-menu > li > a {
-    color: #666666;
+    color: #5BAEB2;
     font-size: 16px;
     border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -760,6 +762,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 
 .sidebar-closed #main-content {
     margin-left: 0px;
+    min-height: 100%;
 }
 
 .sidebar-closed #sidebar {
@@ -877,6 +880,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 /* MAIN CHART CONFIGURATION */
 .main-chart {
     padding-top: 20px;
+
 }
 
 .mleft {
@@ -1181,8 +1185,12 @@ PANELS CONFIGURATIONS
 .content-panel {
     background: #ffffff;
     box-shadow: 0px 3px 2px #aab2bd;
-    padding-top: 15px;
-    padding-bottom: 5px;
+    min-height: 100%;
+    height: auto;
+    /* Negative indent footer by its height */
+    margin: 0 auto 0px;
+    /* Pad bottom by footer height */
+    padding: 15px 0px 15px 15px;
 }
 
 .content-panel h4 {
@@ -2322,10 +2330,13 @@ label {
 
 /*footer*/
 .site-footer {
-    background: #68dff0;
+    background: #5BAEB2;
+/*rgba(232, 146, 202, 0.57);*/
     color: #fff;
     padding: 10px 0;
-    position: absolute;
+    /*position: absolute;*/
+    float: right;
+    width: 100%;
     right: 0;
     bottom: 0;
     left: 0;
@@ -2435,4 +2446,8 @@ left:13px
 
 .my_calendar em:after {
 right:13px
+}
+
+.html {
+    height: 100%;
 }

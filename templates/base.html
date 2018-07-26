@@ -32,13 +32,16 @@
     <link href="{% static "/font-awesome/css/font-awesome.css" %}" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="{% static "/css/zabuto_calendar.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "/js/gritter/css/jquery.gritter.css" %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static "/lineicons/style.css" %}" s>
+    <link rel="stylesheet" type="text/css" href="{% static "/lineicons/style.css" %}" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css" />
 
     <!-- Custom styles for this template -->
     <link href="{% static "/css/style.css" %}" rel="stylesheet">
     <link href="{% static "/css/style-responsive.css" %}" rel="stylesheet">
 
     <script src="{% static "/js/chart-master/Chart.js" %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"> </script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -234,9 +237,10 @@
             </div>
             <! --/row -->
         </section>
+    {% include "footer.html" %}
+
     </section>
 
-    {% include "footer.html" %}
     <!--main content end-->
 
 </section>
@@ -265,6 +269,7 @@
 
 <script type="application/javascript">
     $(document).ready(function () {
+        $('.datepicker').datepicker();
         $("#date-popover").popover({html: true, trigger: "manual"});
         $("#date-popover").hide();
         $("#date-popover").click(function (e) {

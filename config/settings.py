@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -29,7 +30,7 @@ ALLOWED_HOSTS = [
     '0.0.0.0',
 ]
 
-INTERNAL_IPS =[
+INTERNAL_IPS = [
     '127.0.0.1',
     '0.0.0.0',
 ]
@@ -45,7 +46,6 @@ BASE_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'debug_toolbar',
-
 ]
 
 CUSTOM_APPS = [
@@ -64,6 +64,7 @@ INSTALLED_APPS = BASE_APPS + CUSTOM_APPS + PLUGINS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -123,7 +124,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'pl-pl'
+LANGUAGES = [
+    ('pl', _('Polish')),
+    ('en', _('English')),
+    ('de', _('German')),
+]
+
+LANGUAGE_CODE = 'pl'
 
 TIME_ZONE = 'UTC'
 USE_I18N = True
@@ -133,11 +140,38 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+#     '/var/www/static/',
+# ]
+
+# STATIC_ROOT = '/home/janek/PycharmProjects/groomer-helper/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_URL = '/static/'
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     'static/',
 ]
+
+
+# STATICFILES_DIRS = (os.path.join('static'), )
+
+# STATICFILES_FINDERS = (
+#     'django.contrib.staticfiles.finders.FileSystemFinder',
+#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+# )
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_SALON_ID = 1
+# LOCALE_PATHS = (
+#     BASE_DIR + '/locale',)
+
+SITE_ROOT = os.path.dirname(os.path.realpath(__name__))
+LOCALE_PATHS = (
+    os.path.join(SITE_ROOT, 'locale'),
+    os.path.join(BASE_DIR, 'breeds', 'locale'),
+)

@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-21 11:26+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: animals/forms.py:16
+msgid "Animal name"
+msgstr "Imię"
+
+#: animals/forms.py:17 animals/models.py:21
+msgid "breed"
+msgstr "rasa"
+
+#: animals/forms.py:18 animals/models.py:22
+msgid "color"
+msgstr "umaszczenie"
+
+#: animals/forms.py:19 animals/models.py:25
+msgid "notes"
+msgstr "notatki"
+
+#: animals/forms.py:20 animals/models.py:24
+msgid "photo"
+msgstr "zdjęcie"
+
+#: animals/models.py:15
+msgid "Male"
+msgstr "Samiec"
+
+#: animals/models.py:16
+msgid "Female"
+msgstr "Samica"
+
+#: animals/models.py:19
+msgid "name"
+msgstr "imię"
+
+#: animals/models.py:20
+msgid "gender"
+msgstr "płeć"
+
+#: animals/models.py:28
+msgid "owner"
+msgstr "właściciel"

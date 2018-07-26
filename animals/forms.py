@@ -1,4 +1,5 @@
 from django import forms
+from django.utils.translation import ugettext_lazy as _
 
 from animals.models import Animal
 
@@ -12,13 +13,15 @@ class AnimalForm(forms.ModelForm):
             self.fields[i].error_messages = {'required': 'To pole jest wymagane!',
                                              'invalid_choice': 'Wybierz odpowiednią opcję'}
 
-    name = forms.CharField(max_length=100)
-    color = forms.CharField(max_length=100)
-    notes = forms.CharField(widget=forms.Textarea(attrs={'rows': 4, 'cols': 50}))
-    photo = forms.ImageField(required=False)
+    name = forms.CharField(label=_('Animal name'), max_length=100)
+    breed = forms.ChoiceField(label=_('breed'))
+    color = forms.CharField(label=_('color'), max_length=100)
+    notes = forms.CharField(label=_('notes'), widget=forms.Textarea(attrs={'rows': 4, 'cols': 50}))
+    photo = forms.ImageField(label=_('photo'), required=False)
 
     class Meta:
         model = Animal
+        # fields = '__all__'
         fields = ('name', 'gender', 'breed', 'owner', 'color', 'notes', 'photo')
 
 

@@ -12,7 +12,7 @@
 
 {% block details %}
     <p><span>Kolor:</span> {{ animal.color }}</p>
-    <p><span>Płeć:</span> {{ animal.gender }}</p>
+    <p><span>Płeć:</span> {{ animal.get_gender_display }}</p>
     <p><span>Notatki:</span>{{ animal.notes }}</p>
     <p><span>Właściciel:</span>
         <a href="{% url 'owner-details' animal.owner.id %}">{{ animal.owner }}</a>
