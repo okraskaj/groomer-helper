@@ -15,7 +15,7 @@ class AnimalListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['animals'] = Animal.objects.all()
-        context['title'] = 'Zwierzęta' #TODO: Tłumaczeie
+        context['title'] = 'Zwierzęta'  # TODO: Tłumaczenie
         return context
 
 
@@ -33,9 +33,9 @@ class AnimalView(TemplateView):
     template_name = "base.html"
 
     def get_context_data(self, **kwargs):
-            context = super().get_context_data(**kwargs)
-            context['context'] = context
-            return context
+        context = super().get_context_data(**kwargs)
+        context['context'] = context
+        return context
 
 
 class AnimalCreate(generic.CreateView):

@@ -26,15 +26,17 @@ class Breed(models.Model):
         ('twarda', 'Twarda')
     ]
 
-    name = models.TextField(max_length=100, blank=False, null=False, unique=True)
+    name = models.TextField(max_length=100, blank=False, null=False,
+                            unique=True)
     species = models.TextField(max_length=50, blank=False, default='dog')
     size = models.TextField(max_length=20, blank=True, choices=SIZE_CHOICES)
     grooming_notes = models.TextField(max_length=50, blank=True, null=False)
     hair_type = models.TextField(max_length=50, blank=True, null=False)
     weight = models.IntegerField(default=20, blank=False, null=False)
-    photo = models.ImageField(upload_to='breed-avatars/', default='breed-avatars/None/no-img.png')
-    salon = models.ForeignKey(Salon, default=DEFAULT_SALON_ID, null=False, on_delete=models.CASCADE)
-
+    photo = models.ImageField(upload_to='breed-avatars/',
+                              default='breed-avatars/None/no-img.png')
+    salon = models.ForeignKey(Salon, default=DEFAULT_SALON_ID,
+                              null=False, on_delete=models.CASCADE)
 
     # TODO: preferowane fryzury -> jedno lub wiecej zdjecie
 

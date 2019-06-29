@@ -27,6 +27,7 @@ class VisitDetailsView(DetailView):
         context = super().get_context_data(**kwargs)
         return context
 
+
 class VisitCreate(generic.CreateView):
     form_class = forms.VisitForm
     template_name = 'form.html'

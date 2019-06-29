@@ -20,7 +20,7 @@ install:
 
 script:
   - isort -rc -c -df **/*.py
-  - pydocstyle **/*.py
+  - pycodestyle --exclude='**/migrations/*' **/*.py
 
 before_install:
   - travis_retry pip install --upgrade pip setuptools py
