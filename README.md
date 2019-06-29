@@ -1,5 +1,7 @@
-# Groomer-helper
-
+# Groomer Helper
+  [![Build Status](https://travis-ci.org/okraskaj/groomer-helper.svg?branch=master)](https://travis-ci.org/okraskaj/groomer-helper)
+  
+## About
 Management software prototype for pet grooming salon. Made as my BSc Thesis.
 
 ## Getting Started
