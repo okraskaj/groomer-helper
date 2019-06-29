@@ -2,12 +2,12 @@ from datetime import datetime
 
 from django.db import models
 from django.urls import reverse
+from django.utils.translation import ugettext_lazy as _
 
 from breeds.models import Breed
 from config.settings import DEFAULT_SALON_ID
 from owners.models import Owner
 from salons.models import Salon
-from django.utils.translation import ugettext_lazy as _
 
 
 class Animal(models.Model):

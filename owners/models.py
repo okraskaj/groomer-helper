@@ -1,8 +1,8 @@
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 
 from config.settings import DEFAULT_SALON_ID
 from salons.models import Salon
-from django.utils.translation import ugettext_lazy as _
 
 
 class Owner(models.Model):

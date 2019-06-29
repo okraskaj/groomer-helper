@@ -23,5 +23,3 @@ class AnimalForm(forms.ModelForm):
         model = Animal
         # fields = '__all__'
         fields = ('name', 'gender', 'breed', 'owner', 'color', 'notes', 'photo')
-
-
